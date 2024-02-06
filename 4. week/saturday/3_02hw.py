@@ -15,16 +15,16 @@ def get_triangle_numbers(list_size: int) -> list:
     return general_list
 
 
-triangle = get_triangle_numbers(7)
+triangle = get_triangle_numbers(5)
 
-def paint_triangle(triangle_list:list):
-    triangle_len = len(triangle_list)
+
+def paint_triangle(triangle_list: list):
+    triangle_len = len(triangle_list)*2 #10
     for x in triangle_list:
-        whitespaces = (triangle_len - len(x))//2
-        stringed = [str(c) for c in x]
+        whitespaces = (triangle_len - len(x)*2)/2
+        stringed = [str(c)+' ' for c in x]
         line = ''.join(stringed)
-        additional_ws = 0 if (triangle_len - len(x))%2 == 0 else 1
-        print((whitespaces+additional_ws)*' ', line)
+        print(int(whitespaces)*' ', line)
 
 
 paint_triangle(triangle)
