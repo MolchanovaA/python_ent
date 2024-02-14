@@ -58,3 +58,10 @@ def find_sum_2(sum: int, list_of_numbers: list) -> tuple:
 
 find_sum_2(11, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
 #speed O(n)
+
+# def find_sum_3(sum: int, list_of_numbers: list) -> tuple:
+#     result = set()
+#     for i, num in enumerate(list_of_numbers):
+#         print(i, num )
+
+# find_sum_3(11, ['A', 'B', 'C', 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
