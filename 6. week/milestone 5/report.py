@@ -1,9 +1,5 @@
 import csv
 
-month = 'August'
-months_numbers_dict = {'January':'01', 'February': '02', 'March' : '03', 'April': '04', 'May': '05', 'June': '06', 'July': '07', 'August': '08', 'September': '09', 'October': '10', 'November': '11', 'December': '12'}
-month_number = months_numbers_dict[month]
-
 
 def data_collector(row_id: int, report_section, report_dpt, report_main, _row, _month_no): 
      if len(_row) > 0 and _row[row_id][5:7] == _month_no:
@@ -60,7 +56,14 @@ def report_printer(_report, _month):
 
 
 
-_report_ = db_reader_prog_report_creator('database.csv', month_number)
-# print(_report_)
+
+month = input('Enter Month, capitalized. --') or 'August'
+db_file_name = input('Enter data base file name. --') or 'database'
+names_flag = input('type -v if you want to see the names --')
+months_numbers_dict = {'January':'01', 'February': '02', 'March' : '03', 'April': '04', 'May': '05', 'June': '06', 'July': '07', 'August': '08', 'September': '09', 'October': '10', 'November': '11', 'December': '12'}
+month_number = months_numbers_dict[month]
+_report_ = db_reader_prog_report_creator(f'{db_file_name}.csv', month_number, names_flag)
+
+
 report_printer(_report_, month)
 
