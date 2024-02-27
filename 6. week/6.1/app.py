@@ -18,11 +18,14 @@ def toCalculate(n, toDo, m):
         result = intN + intM
     elif toDo == '-':
         result = intN - intM 
+    elif toDo[0] == 'C':
+        result = intN / intM
     elif toDo == '*':
         result = intM * intN
     else:
         result = 'Not applicable'
     return result
+
 
 res = toCalculate(a,toDoMath, b )
 print(res)
