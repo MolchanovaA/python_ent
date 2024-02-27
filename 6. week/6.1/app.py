@@ -3,10 +3,14 @@ import sys
 a = sys.argv[1]
 b = sys.argv[3]
 toDoMath = sys.argv[2]
-print(a, b, toDoMath)
+if b[0] == 'a':
+    l = len(sys.argv) - 1
+    b = sys.argv[l]
+    toDoMath = '*'
+print(a, b, toDoMath, 'INPUT')
+print(sys.argv)
 
 def toCalculate(n, toDo, m):
-    print(n , m, toDo)
     intN = int(n)
     intM = int(m)
     result = 0
@@ -16,6 +20,8 @@ def toCalculate(n, toDo, m):
         result = intN - intM 
     elif toDo[0] == 'C':
         result = intN / intM
+    elif toDo == '*':
+        result = intM * intN
     else:
         result = 'Not applicable'
     return result
