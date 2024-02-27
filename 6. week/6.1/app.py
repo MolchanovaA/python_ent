@@ -1,10 +1,12 @@
 import sys
 
 a = sys.argv[1]
-b = sys.argv[2]
-toDoMath = sys.argv[3]
+b = sys.argv[3]
+toDoMath = sys.argv[2]
+print(a, b, toDoMath)
 
-def toCalculate(n , m , toDo):
+def toCalculate(n, toDo, m):
+    print(n , m, toDo)
     intN = int(n)
     intM = int(m)
     result = 0
@@ -12,10 +14,12 @@ def toCalculate(n , m , toDo):
         result = intN + intM
     elif toDo == '-':
         result = intN - intM 
+    elif toDo[0] == 'C':
+        result = intN / intM
     else:
         result = 'Not applicable'
     return result
 
 
-res = toCalculate(a, b, toDoMath)
+res = toCalculate(a,toDoMath, b )
 print(res)
