@@ -1,4 +1,6 @@
 import csv
+import sys
+
 
 
 def data_collector(row_id: int, report_section, report_dpt, report_main, _row, _month_no): 
@@ -57,9 +59,18 @@ def report_printer(_report, _month):
 
 
 
-month = input('Enter Month, capitalized. --') or 'August'
-db_file_name = input('Enter data base file name. --') or 'database'
-names_flag = input('type -v if you want to see the names --')
+
+month = sys.argv[1] or 'August'
+db_file_name = sys.argv[2] or 'database'
+
+names_flag = None
+
+try : 
+    names_flag = sys.argv[3]
+except: 
+    print('FAIL')
+
+
 months_numbers_dict = {'January':'01', 'February': '02', 'March' : '03', 'April': '04', 'May': '05', 'June': '06', 'July': '07', 'August': '08', 'September': '09', 'October': '10', 'November': '11', 'December': '12'}
 month_number = months_numbers_dict[month]
 _report_ = db_reader_prog_report_creator(f'{db_file_name}.csv', month_number, names_flag)
