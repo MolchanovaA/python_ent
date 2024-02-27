@@ -4,7 +4,8 @@ a = sys.argv[1]
 b = sys.argv[3]
 toDoMath = sys.argv[2]
 if b[0] == 'a':
-    b = sys.argv[4]
+    l = len(sys.argv) - 1
+    b = sys.argv[l]
     toDoMath = '*'
 print(a, b, toDoMath, 'INPUT')
 print(sys.argv)
