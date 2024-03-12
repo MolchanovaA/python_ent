@@ -11,7 +11,6 @@ def get_data():
     request_dict = {}
     for value in params:
         request_dict[value] = params[value]
-
     report = db_reader_prog_report_creator(request_dict['month'], request_dict['department'])
 
     return json.dumps(report , indent=1)
